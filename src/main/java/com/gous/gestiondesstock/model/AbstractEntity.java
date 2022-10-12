@@ -17,7 +17,6 @@ import java.util.Date;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class) //permet d'ecouter la classe et lors de la creation de date ou la modification
 public class AbstractEntity implements Serializable {
-
     @Id
     private Integer id;
 

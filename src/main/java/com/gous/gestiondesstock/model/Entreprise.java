@@ -1,14 +1,12 @@
 package com.gous.gestiondesstock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -24,9 +22,6 @@ public class Entreprise extends AbstractEntity{
 
     @Embedded
     private Adresse adresse;
-
-    @Column(name = "codefiscal")
-    private String codeFiscal;
 
     @Column(name = "photo")
     private String photo;

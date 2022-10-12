@@ -1,15 +1,13 @@
 package com.gous.gestiondesstock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +19,7 @@ public class MouvementStock  extends AbstractEntity{
     private Instant dateMvt;
 
     @Column(name = "quantite")
-    private BigDecimal quantite;
+    private BigDecimal quantity;
 
     @ManyToOne
     @JoinColumn(name = "idarticle")
@@ -29,7 +27,7 @@ public class MouvementStock  extends AbstractEntity{
 
     @Column(name = "typemvt")
     @Enumerated(EnumType.STRING)
-    private TypeMVTStock typeMvt;
+    private TypeMvtStock typeMvt;
 
     @Column(name = "sourcemvt")
     @Enumerated(EnumType.STRING)
